@@ -3,6 +3,35 @@
 
 guile-openai is an OpenAI module for Guile.
 
+
+# Installation
+
+If you are cloning the repository make sure you run this first:
+
+    $ autoreconf -vif
+
+Then, run the typical sequence:
+
+    $ ./configure --prefix=<guile-prefix>
+    $ make
+    $ sudo make install
+
+Where `<guile-prefix>` should preferably be the same as your system Guile
+installation directory (e.g. /usr).
+
+If everything installed successfully you should be up and running:
+
+    $ guile
+    scheme@(guile-user)> (use-modules (openai client))
+    scheme@(guile-user)> (define client (make-client "YOUR_API_KEY")
+
+It might be that you installed guile-openai somewhere differently than your
+system's Guile. If so, you need to indicate Guile where to find guile-openai,
+for example:
+
+    $ GUILE_LOAD_PATH=/usr/local/share/guile/site guile
+
+
 # License
 
 Copyright (C) 2022 Aleix Conchillo Flaque <aconchillo@gmail.com>
