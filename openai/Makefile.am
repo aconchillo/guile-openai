@@ -22,7 +22,7 @@
 moddir=$(datadir)/guile/site/$(GUILE_EFFECTIVE_VERSION)/openai
 objdir=$(libdir)/guile/$(GUILE_EFFECTIVE_VERSION)/site-ccache/openai
 
-SOURCES = client.scm
+SOURCES = client.scm types.scm
 
 GOBJECTS = $(SOURCES:%.scm=%.go)
 
