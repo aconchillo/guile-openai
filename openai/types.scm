@@ -108,7 +108,7 @@
   (text)
   (index)
   (logprobs)
-  (finish-reason "finish-reason"))
+  (finish-reason "finish_reason"))
 
 (define-json-type <usage>
   (prompt-tokens "prompt_tokens")
