@@ -44,8 +44,6 @@
 ;;
 ;; Public
 ;;
-;; TODO: it's all the same so just create a macro.
-;;
 
 (define-record-type <openai-client>
   (make-openai-client organization api-key)
