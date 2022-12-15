@@ -82,6 +82,27 @@
         (if (string? body) body (utf8->string body))
       json->edit)))
 
+(define (create-image client body)
+  (receive (response body)
+      (post-request client "/images/generations" body)
+    (call-with-input-string
+        (if (string? body) body (utf8->string body))
+      json->images)))
+
+(define (create-image-edit client body)
+  (receive (response body)
+      (post-request client "/images/edits" body)
+    (call-with-input-string
+        (if (string? body) body (utf8->string body))
+      json->images)))
+
+(define (create-image-variation client body)
+  (receive (response body)
+      (post-request client "/images/variations" body)
+    (call-with-input-string
+        (if (string? body) body (utf8->string body))
+      json->images)))
+
 (define (create-moderation client body)
   (receive (response body)
       (post-request client "/moderations" body)

@@ -70,6 +70,16 @@
             json->result
             result->json
 
+            make-image
+            image?
+            json->image
+            image->json
+
+            make-images
+            images?
+            json->images
+            images->json
+
             make-moderation
             moderation?
             json->moderation
@@ -144,5 +154,13 @@
   (id)
   (model)
   (results "results" #(<result>)))
+
+(define-json-type <image>
+  (url)
+  (b64_json))
+
+(define-json-type <images>
+  (created)
+  (data "data" #(<image>)))
 
 ;;; (openai types) ends here
